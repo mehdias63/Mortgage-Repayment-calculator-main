@@ -11,15 +11,13 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body
-		class="bg-blue-50 flex justify-center items-center min-h-screen"
+		class="bg-[#E4F4FD] flex justify-center items-center min-h-screen"
 	>
 		<div class="bg-white rounded-lg shadow-lg w-full max-w-4xl flex">
 			<!-- Left Section -->
 			<div class="w-1/2 p-6">
 				<div class="flex items-center justify-between">
-					<h1 class="text-2xl font-bold text-gray-700 mb-4">
-						Mortgage Calculator
-					</h1>
+					<h1 class="text-2xl font-bold mb-4">Mortgage Calculator</h1>
 					<button id="clearAllBtn">Clear All</button>
 				</div>
 				<form id="mortgageForm">
@@ -34,14 +32,14 @@
 						<div class="relative">
 							<span
 								id="amountUnit"
-								class="absolute left-3 top-2 text-gray-500 bg-white px-2"
+								class="absolute left-0.5 top-0.5 text-[#4E6E7E] text-lg bg-[#E4F4FD] py-2 px-4 font-bold leading-[1.40625rem]"
 							>
 								£
 							</span>
 							<input
 								type="number"
 								id="mortgageAmount"
-								class="pl-8 pr-3 py-2 w-full border border-gray-300 rounded focus:ring focus:ring-blue-500 focus:outline-none"
+								class="pl-[4rem] py-2 w-full border border-gray-300 rounded focus:border-[#D8DB2F] focus:outline-none"
 								placeholder="Enter amount"
 							/>
 						</div>
@@ -54,63 +52,65 @@
 					</div>
 
 					<!-- Mortgage Term -->
-					<div class="mb-6">
-						<label
-							for="mortgageTerm"
-							class="block font-bold text-gray-600 mb-2"
-						>
-							Mortgage Term
-						</label>
-						<div class="relative">
-							<input
-								type="number"
-								id="mortgageTerm"
-								class="pr-12 pl-3 py-2 w-full border border-gray-300 rounded focus:ring focus:ring-blue-500 focus:outline-none"
-								placeholder="Enter term"
-							/>
-							<span
-								id="termUnit"
-								class="absolute right-3 top-2 text-gray-500 bg-white px-2"
+					<div class="flex gap-x-4">
+						<div class="mb-6">
+							<label
+								for="mortgageTerm"
+								class="block font-bold text-gray-600 mb-2"
 							>
-								years
-							</span>
+								Mortgage Term
+							</label>
+							<div class="relative">
+								<input
+									type="number"
+									id="mortgageTerm"
+									class="pr-12 pl-3 py-2 w-full border border-gray-300 rounded focus:border-[#D8DB2F] focus:outline-none"
+									placeholder="Enter term"
+								/>
+								<span
+									id="termUnit"
+									class="absolute right-0.5 top-0.5 text-[#4E6E7E] text-lg bg-[#E4F4FD] py-2 px-4 font-bold leading-[1.40625rem]"
+								>
+									years
+								</span>
+							</div>
+							<p
+								id="mortgageTermError"
+								class="hidden text-red-500 text-sm mt-1"
+							>
+								This field is required
+							</p>
 						</div>
-						<p
-							id="mortgageTermError"
-							class="hidden text-red-500 text-sm mt-1"
-						>
-							This field is required
-						</p>
-					</div>
 
-					<!-- Interest Rate -->
-					<div class="mb-6">
-						<label
-							for="interestRate"
-							class="block font-bold text-gray-600 mb-2"
-						>
-							Interest Rate
-						</label>
-						<div class="relative">
-							<input
-								type="number"
-								id="interestRate"
-								class="pr-10 pl-3 py-2 w-full border border-gray-300 rounded focus:ring focus:ring-blue-500 focus:outline-none"
-								placeholder="Enter rate"
-							/>
-							<span
-								id="rateUnit"
-								class="absolute right-3 top-2 text-gray-500 bg-white px-2"
+						<!-- Interest Rate -->
+						<div class="mb-6">
+							<label
+								for="interestRate"
+								class="block font-bold text-gray-600 mb-2"
 							>
-								%
-							</span>
+								Interest Rate
+							</label>
+							<div class="relative">
+								<input
+									type="number"
+									id="interestRate"
+									class="pr-10 pl-3 py-2 w-full border border-gray-300 rounded focus:border-[#D8DB2F] focus:outline-none"
+									placeholder="Enter rate"
+								/>
+								<span
+									id="rateUnit"
+									class="absolute right-0.5 top-0.5 text-[#4E6E7E] text-lg bg-[#E4F4FD] py-2 px-5 font-bold leading-[1.40625rem]"
+								>
+									%
+								</span>
+							</div>
+							<p
+								id="interestRateError"
+								class="hidden text-red-500 text-sm mt-1"
+							>
+								This field is required
+							</p>
 						</div>
-						<p
-							id="interestRateError"
-							class="hidden text-red-500 text-sm mt-1"
-						>
-							This field is required
-						</p>
 					</div>
 
 					<!-- Mortgage Type -->
@@ -119,21 +119,25 @@
 							>Mortgage Type</label
 						>
 						<div id="mortgageTypeContainer" class="space-y-2">
-							<label class="flex items-center space-x-2">
+							<label
+								class="flex items-center space-x-2 border border-gray-300 hover:bg-[#D8DB2F] py-1 px-2 cursor-pointer"
+							>
 								<input
 									type="radio"
 									name="mortgageType"
 									value="repayment"
-									class="h-4 w-4 text-blue-500 border-gray-300 focus:ring-blue-500"
+									class="h-4 w-4 text-blue-500 border-gray-300"
 								/>
 								<span>Repayment</span>
 							</label>
-							<label class="flex items-center space-x-2">
+							<label
+								class="flex items-center space-x-2 border border-gray-300 hover:bg-[#D8DB2F] py-1 px-2 cursor-pointer"
+							>
 								<input
 									type="radio"
 									name="mortgageType"
 									value="interestOnly"
-									class="h-4 w-4 text-blue-500 border-gray-300 focus:ring-blue-500"
+									class="h-4 w-4 text-blue-500 border-gray-300"
 								/>
 								<span>Interest Only</span>
 							</label>
@@ -150,29 +154,33 @@
 					<button
 						type="button"
 						id="calculateBtn"
-						class="bg-yellow-400 text-white font-bold py-2 px-4 rounded hover:bg-yellow-500 focus:outline-none focus:ring focus:ring-yellow-300"
+						class="bg-[#D8DB2F] font-bold py-3 px-6 text-[#133041] rounded-full text-lg font-bold flex gap-2 items-center"
 					>
+						<img src="./images/icon-calculator.svg" alt="calculate" />
 						Calculate Repayments
 					</button>
 				</form>
 			</div>
 			<!-- Right Section -->
 			<div
-				class="w-1/2 bg-blue-900 text-white flex flex-col items-center justify-center p-6 rounded-r-lg"
+				id="results"
+				class="w-1/2 bg-[#133041] text-white flex flex-col items-center justify-center p-6 rounded-r-2xl lg:rounded-bl-[5rem]"
 			>
-				<div id="results" class="text-center">
-					<h2 class="text-xl font-bold mb-2">Results shown here</h2>
-					<p class="text-sm">
-						Complete the form and click "calculate repayments" to see
-						what your monthly repayments would be.
-					</p>
-					<p id="monthlyRepayment" class="text-lg hidden">
-						Monthly Repayment: -
-					</p>
-					<p id="totalRepayment" class="text-lg hidden">
-						Total Repayment: -
-					</p>
-				</div>
+				<img
+					src="./images/illustration-empty.svg"
+					alt="illustration"
+				/>
+				<h2 class="text-xl font-bold mb-2">Results shown here</h2>
+				<p class="text-sm">
+					Complete the form and click "calculate repayments" to see
+					what your monthly repayments would be.
+				</p>
+				<p id="monthlyRepayment" class="text-lg hidden">
+					Monthly Repayment: -
+				</p>
+				<p id="totalRepayment" class="text-lg hidden">
+					Total Repayment: -
+				</p>
 			</div>
 		</div>
 		<script src="/src/js/index.js" type="module"></script>
