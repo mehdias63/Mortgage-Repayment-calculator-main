@@ -13,19 +13,28 @@
 	<body
 		class="bg-[#E4F4FD] flex justify-center items-center min-h-screen"
 	>
-		<div class="bg-white rounded-lg shadow-lg w-full max-w-4xl flex">
-			<!-- Left Section -->
-			<div class="w-1/2 p-6">
+		<div
+			class="bg-white rounded-2xl shadow-lg w-full max-w-[60rem] md:flex mx-4"
+		>
+			<div class="md:w-1/2 p-6">
 				<div class="flex items-center justify-between">
-					<h1 class="text-2xl font-bold mb-4">Mortgage Calculator</h1>
-					<button id="clearAllBtn">Clear All</button>
+					<h1
+						class="text-2xl font-bold mb-4 text-[#133041] leading-[1.875rem]"
+					>
+						Mortgage Calculator
+					</h1>
+					<button
+						id="clearAllBtn"
+						class="underline text-[#4E6E7E] font-medium leading-[1.5rem]"
+					>
+						Clear All
+					</button>
 				</div>
 				<form id="mortgageForm">
-					<!-- Mortgage Amount -->
 					<div class="mb-6">
 						<label
 							for="mortgageAmount"
-							class="block font-bold text-gray-600 mb-2"
+							class="block text-[#6B94A8] font-medium mb-2"
 						>
 							Mortgage Amount
 						</label>
@@ -45,18 +54,16 @@
 						</div>
 						<p
 							id="mortgageAmountError"
-							class="hidden text-red-500 text-sm mt-1"
+							class="hidden text-[#D73328] text-sm mt-1"
 						>
 							This field is required
 						</p>
 					</div>
-
-					<!-- Mortgage Term -->
-					<div class="flex gap-x-4">
+					<div class="md:flex gap-x-4">
 						<div class="mb-6">
 							<label
 								for="mortgageTerm"
-								class="block font-bold text-gray-600 mb-2"
+								class="block text-[#6B94A8] font-medium mb-2"
 							>
 								Mortgage Term
 							</label>
@@ -76,17 +83,15 @@
 							</div>
 							<p
 								id="mortgageTermError"
-								class="hidden text-red-500 text-sm mt-1"
+								class="hidden text-[#D73328] text-sm mt-1"
 							>
 								This field is required
 							</p>
 						</div>
-
-						<!-- Interest Rate -->
 						<div class="mb-6">
 							<label
 								for="interestRate"
-								class="block font-bold text-gray-600 mb-2"
+								class="block text-[#6B94A8] font-medium mb-2"
 							>
 								Interest Rate
 							</label>
@@ -106,14 +111,12 @@
 							</div>
 							<p
 								id="interestRateError"
-								class="hidden text-red-500 text-sm mt-1"
+								class="hidden text-[#D73328] text-sm mt-1"
 							>
 								This field is required
 							</p>
 						</div>
 					</div>
-
-					<!-- Mortgage Type -->
 					<div class="mb-6">
 						<label class="block font-bold text-gray-600 mb-2"
 							>Mortgage Type</label
@@ -149,8 +152,6 @@
 							This field is required
 						</p>
 					</div>
-
-					<!-- Submit Button -->
 					<button
 						type="button"
 						id="calculateBtn"
@@ -161,10 +162,9 @@
 					</button>
 				</form>
 			</div>
-			<!-- Right Section -->
 			<div
 				id="results"
-				class="w-1/2 bg-[#133041] text-white flex flex-col items-center justify-center p-6 rounded-r-2xl lg:rounded-bl-[5rem]"
+				class="md:w-1/2 bg-[#133041] text-white flex flex-col items-center justify-center p-6 rounded-r-2xl rounded-bl-2xl lg:rounded-bl-[5rem]"
 			>
 				<img
 					src="./images/illustration-empty.svg"

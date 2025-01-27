@@ -34,7 +34,6 @@ document
 
 		let hasError = false
 
-		// Reset error styles
 		mortgageAmount.classList.remove('border-[#D73328]')
 		mortgageTerm.classList.remove('border-[#D73328]')
 		interestRate.classList.remove('border-[#D73328]')
@@ -46,7 +45,6 @@ document
 		interestRateError.classList.add('hidden')
 		mortgageTypeError.classList.add('hidden')
 
-		// Validate inputs
 		if (!mortgageAmount.value) {
 			mortgageAmount.classList.add('border-[#D73328]')
 			amountUnit.classList.add('bg-[#D73328]')
@@ -80,15 +78,12 @@ document
 			return
 		}
 
-		// Clear the previous results content
-		results.innerHTML = '' // Ensures the previous content is cleared before updating
+		results.innerHTML = ''
 
-		// Calculate results
 		const mortgageAmountValue = parseFloat(mortgageAmount.value)
 		const mortgageTermValue = parseInt(mortgageTerm.value)
 		const interestRateValue = parseFloat(interestRate.value)
 		const mortgageType = mortgageTypeElement.value
-
 		const monthlyRate = interestRateValue / 100 / 12
 		const totalMonths = mortgageTermValue * 12
 
@@ -99,13 +94,38 @@ document
 			const total = monthly * totalMonths
 
 			results.innerHTML = `
-      <p class="text-white text-lg font-bold">Calculation Results:</p>
-      <p id="monthlyRepayment" class="text-white">Monthly Repayment: £${monthly.toFixed(
-				2,
-			)}</p>
-      <p id="totalRepayment" class="text-white">Total Repayment: £${total.toFixed(
-				2,
-			)}</p>
+				<div
+		class="p-4 text-[#9ABED5] text-base font-medium leading-[1.5rem]"
+	>
+		<h2 class="text-white text-2xl font-bold leading-[1.875rem] mb-2">
+			Your results
+		</h2>
+		<p>
+			Your results are shown below based on the information you
+			provided. To adjust the results, edit the form and click
+			“calculate repayments” again.
+		</p>
+		<div
+			class="bg-[#0e2431] p-4 border-t-4 border-t-[#D8DB2F] rounded-lg mt-6"
+		>
+			<div class="mb-8 border-b border-[#9ABED5]">
+				<p>Your monthly repayments</p>
+				<p
+					class="text-[#D8DB2F] text-[2.5rem] md:text-[3.5rem] font-bold md:leading-[4.375rem] mb-6"
+				>
+					£ ${monthly.toFixed(2)}
+				</p>
+			</div>
+			<div class="">
+				<p>Total you'll repay over the term</p>
+				<p
+					class="text-white text-2xl font-bold leading-[1.875rem] mt-2"
+				>
+					£ ${total.toFixed(2)}
+				</p>
+			</div>
+		</div>
+	</div>
     `
 		} else if (mortgageType === 'interestOnly') {
 			const total =
@@ -122,7 +142,6 @@ document
 		}
 	})
 
-// Remove error immediately when input is corrected
 document
 	.getElementById('mortgageAmount')
 	.addEventListener('input', () => {
@@ -174,7 +193,6 @@ document
 		}
 	})
 
-// Remove error for mortgage type
 const mortgageTypeRadios = document.querySelectorAll(
 	'input[name="mortgageType"]',
 )
@@ -187,7 +205,6 @@ mortgageTypeRadios.forEach(radio => {
 	})
 })
 
-// Clear all fields and reset to initial state
 document
 	.getElementById('clearAllBtn')
 	.addEventListener('click', () => {
@@ -219,8 +236,6 @@ document
 	</p>
     </div>
   `
-
-		// Reset error styles
 		document
 			.querySelectorAll('.border-[#D73328]')
 			.forEach(element => {
