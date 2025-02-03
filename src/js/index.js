@@ -134,8 +134,8 @@ document
 				mortgageTermValue
 
 			results.innerHTML = `
-      <p class="text-white text-lg font-bold">Calculation Results:</p>
-      <p id="totalRepayment" class="text-white">Total Repayment: £${total.toFixed(
+      <p class="text-white text-2xl font-bold leading-[1.875rem] mb-2">Calculation Results:</p>
+      <p id="totalRepayment" class="text-[#D8DB2F] text-2xl font-bold leading-[1.875rem] mt-8">Total Repayment: £${total.toFixed(
 				2,
 			)}</p>
     `
